@@ -85,7 +85,7 @@ namespace NamPhuThuy.DataManage
         [SerializeField] private string description;
         [SerializeField] private string price;
 
-        [SerializeField] private List<ResourceAmount> rewardList;
+        [SerializeField] private List<ResourceAmount> rewards;
         
         public string BundleName => bundleName;
         public string BundleId => bundleId;
@@ -94,6 +94,6 @@ namespace NamPhuThuy.DataManage
         public Sprite SubTitleImage => subTitleImage;
         public string Description => description;
         public string Price => price;
-        public List<ResourceAmount> RewardList => rewardList;
+        public List<ResourceAmount> Rewards => rewards;
     }
 }

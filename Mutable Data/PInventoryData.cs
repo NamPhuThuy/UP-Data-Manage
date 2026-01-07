@@ -189,6 +189,16 @@ namespace NamPhuThuy.DataManage
         #endregion
 
         #endregion
+
+        public void ClearAllCoins()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ClearBoosters()
+        {
+            throw new NotImplementedException();
+        }
     }
     
 }

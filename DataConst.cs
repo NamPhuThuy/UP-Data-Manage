@@ -12,5 +12,8 @@ namespace NamPhuThuy.DataManage
         // STATS
         public const int MAX_HEALTH = 5;
         public static int HEALTH_REGEN_TIME = 1200;
+
+        public const int CHEAT_COIN_AMOUNT = 3000;
+        public const int CHEAT_BOOSTER_AMOUNT = 20;
     }
 }

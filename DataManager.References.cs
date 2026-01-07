@@ -24,11 +24,13 @@ namespace NamPhuThuy.DataManage
         private string _settingsDataPath;
         private string _progressDataPath;
         private string _inventoryDataPath;
+        
 
         private bool _isPlayerDataLoaded;
         private bool _isSettingsDataLoaded;
         private bool _isProgressDataLoaded;
         private bool _isInventoryDataLoaded;
+      
         
 
         [SerializeField] private PlayerData cachedPlayerData;
@@ -99,6 +101,7 @@ namespace NamPhuThuy.DataManage
                 return cachedPInventoryData;
             }
         }
+      
         #endregion
         
         #region Immutable Datas
@@ -155,7 +158,20 @@ namespace NamPhuThuy.DataManage
             }
         }
 
-      
+        [SerializeField] private EventRewardData eventRewardData;
+
+        public EventRewardData EventRewardData
+        {
+            get
+            {
+                if (eventRewardData == null)
+                {
+                    eventRewardData = Resources.Load<EventRewardData>("EventRewardData");
+                }
+
+                return eventRewardData;
+            }
+        }
 
         #endregion
 

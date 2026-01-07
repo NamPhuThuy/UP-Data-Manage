@@ -6,12 +6,12 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace NamPhuThuy.Data
+namespace NamPhuThuy.DataManage
 {
     [CreateAssetMenu(fileName = "#SCRIPTNAME#", menuName = "Game/#SCRIPTNAME#", order = 1)]
     public class #SCRIPTNAME#Data : ScriptableObject
     {
-        public List<#SCRIPTNAME#Record> data = new List<#SCRIPTNAME#Record>();
+        [SerializeField] private #SCRIPTNAME#Record[] data;
 
         private Dictionary<int, #SCRIPTNAME#Record> _dictData;
         
@@ -35,7 +35,7 @@ namespace NamPhuThuy.Data
 #if UNITY_EDITOR
          // Example optional policy: if recordId < 0, auto-assign by row
          bool changed = false;
-         for (int i = 0; i < data.Count; i++)
+         for (int i = 0; i < data.Length; i++)
          {
              var r = data[i];
              if (r == null) continue;
@@ -65,13 +65,13 @@ namespace NamPhuThuy.Data
         
         private void InitDict()
         {
-            if (data == null || data.Count == 0)
+            if (data == null || data.Length == 0)
             {
                 _dictData = new Dictionary<int, #SCRIPTNAME#Record>(0);
                 return;
             }
         
-            _dictData = new Dictionary<int, #SCRIPTNAME#Record>(data?.Count ?? 0);
+            _dictData = new Dictionary<int, #SCRIPTNAME#Record>(data?.Length ?? 0);
             if (_dictData == null) return;
             foreach (var r in data)
             {

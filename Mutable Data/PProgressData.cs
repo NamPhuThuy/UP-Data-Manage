@@ -20,6 +20,8 @@ namespace NamPhuThuy.DataManage
         }
 
         [SerializeField] private bool isAdsRemoved;
+        public bool IsVIP;
+
         public bool IsAdsRemoved 
         {
             get => isAdsRemoved;
@@ -29,7 +31,9 @@ namespace NamPhuThuy.DataManage
                 DataManager.Ins.MarkDirty();
             }
         }
-        
+
+        public int CurrentBackgroundId { get; set; }
+
         public void RemoveAds()
         {
             IsAdsRemoved = true;

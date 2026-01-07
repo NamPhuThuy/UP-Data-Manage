@@ -127,6 +127,7 @@ namespace NamPhuThuy.DataManage
         TIMER = 1,
         MAGIC_PICK = 2,
         SHUFFLE = 3,
+        UNDO = 4,
         MORE_GRILL = 7,
         EXTRA_HEART = 8
 

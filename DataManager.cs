@@ -26,6 +26,10 @@ JSON for:
 
     public partial class DataManager : MonoBehaviour
     {
+        private bool isCheatMode = true;
+
+        public bool IsCheatMode => isCheatMode;
+
         #region Private Fields
 
         private Coroutine _saveDebounce;
@@ -108,6 +112,8 @@ JSON for:
             
             _playerDataPath = $"{Application.persistentDataPath}/player.{DataConst.FILES_EXTENSION}";
             _settingsDataPath = $"{Application.persistentDataPath}/settings.{DataConst.FILES_EXTENSION}";
+            _progressDataPath = $"{Application.persistentDataPath}/progress.{DataConst.FILES_EXTENSION}";
+            _inventoryDataPath = $"{Application.persistentDataPath}/resource.{DataConst.FILES_EXTENSION}";
 
             // yield return StartCoroutine(LoadData());
             LoadData();
@@ -338,7 +344,7 @@ JSON for:
             _saveDebounce = StartCoroutine(SaveAfterDelay(DataConst.SAVE_INTERVAL));
         }
 
-        private IEnumerator SaveAfterDelay(float delay)
+private IEnumerator SaveAfterDelay(float delay)
         {
             yield return new WaitForSeconds(delay);
             SaveData();
