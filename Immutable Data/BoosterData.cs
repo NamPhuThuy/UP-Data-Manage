@@ -129,7 +129,8 @@ namespace NamPhuThuy.DataManage
         SHUFFLE = 3,
         UNDO = 4,
         MORE_GRILL = 7,
-        EXTRA_HEART = 8
+        EXTRA_HEART = 8,
+        HINT = 9,
 
     }
 }
